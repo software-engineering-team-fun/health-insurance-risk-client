@@ -1,0 +1,27 @@
+{
+  "name": "resolves",
+  "version": "1.0.0",
+  "description": "Resolve parent directories, execute a function on every dir found until a result is returned",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3rd-Eden/resolves.git"
+  },
+  "keywords": [
+    "resolve",
+    "parent",
+    "traverse",
+    "resolves",
+    "folder",
+    "directory"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3rd-Eden/resolves/issues"
+  },
+  "homepage": "https://github.com/3rd-Eden/resolves#readme"
+}
