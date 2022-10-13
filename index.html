@@ -3,49 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HealthCare Risk Assessment</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel ="stylesheet" type ="text/css" href = "style.css" >
+    <link rel ="stylesheet" href = "assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
 </head>
-<body>
-    <div class = "container">
-    <h2> Health Insurance Risk Calculator </h2>
-    <br>
-    <form action = "https://health-insurance-risk-server.azurewebsites.net/send" method = "GET">     <!-- ttp://localhost:3000/send for local testing, https://health-insurance-risk-server.azurewebsites.net/send for azure server -am -->
-        <div class="form-group">
-            <label for ="patAge">Enter the person's age in years:</label>
-            <input type = "text" class="form-control" id = "patAge" name = "patAge">
+<body style="background-color: gray;">
+    <section class="main">
+        <div class = "container main">
+        <h2 class="text-center">Health Insurance Risk Calculator</h2>
+        <br>
+        <form class="form" action = "https://health-insurance-risk-server.azurewebsites.net/send" method = "GET"><!-- ttp://localhost:3000/send for local testing, https://health-insurance-risk-server.azurewebsites.net/send for azure server -am -->
+            <div class="form-group">
+                <label for ="patAge">Enter the person's age in years:</label>
+                <input type = "text" class="form-control" id = "patAge" name = "patAge" placeholder="Enter age">
+            </div>
+            <div class="form-group">
+                <label for ="patHeight">Enter the person's height in inches:</label>
+                <input type = "text" class="form-control" id = "patHeight" name = "patHeight" placeholder="Enter height">
+            </div>
+            <div class="form-group">
+                <label for ="patWeight">Enter the person's weight in pounds:</label>
+                <input type = "text" class="form-control" id = "patWeight" name = "patWeight" placeholder="Enter weight">
+            </div>
+            <div class="form-group">
+                <label for ="patSys">Enter the person's systolic blood pressure:</label>
+                <input type = "text"  class="form-control" id = "patSys" name = "patSys" placeholder="Enter systolic blood pressure">
+            </div>
+            <div class="form-group">
+                <label for ="patDia">Enter the person's diastolic  blood pressure:</label>
+                <input type = "text"  class="form-control" id = "patDia" name = "patDia" placeholder="Enter diastolic blood pressure">
+            </div>
+            <p class="history-text">Does the person have a family history of ...</p>
+            <div class="d-flex justify-content-center">
+                <div>
+                    <div class="form-check">
+                        <label for="patDiaH">Diabetes</label>
+                        <input type="checkbox" class="form-check-input" name="patDiaH" id="patDiaH" value="patDiaH">
+                    </div>
+                    <div class="form-check">
+                        <label for="patCancerH">Cancer</label>
+                        <input type="checkbox" class="form-check-input" name="patCancerH" id="patCancerH" value="patCancerH">
+                    </div>
+                    <div class="form-check">
+                        <label for="patAlzH">Alzheimers</label>
+                        <input type="checkbox"  class="form-check-input" name="patAlzH" id="patAlzH" value="patAlzH">
+                    </div>
+                </div>
+            </div>
+            <button class="button mt-2" type="button" value="Submit Patient Info">Submit Patient Info
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </form>
         </div>
-        <div class="form-group">
-            <label for ="patHeight">Enter the person's height in inches:</label>
-            <input type = "text" class="form-control" id = "patHeight" name = "patHeight">
-        </div>
-        <div class="form-group">
-            <label for ="patWeight">Enter the person's weight in pounds:</label>
-            <input type = "text" class="form-control" id = "patWeight" name = "patWeight">
-        </div>
-        <div class="form-group">
-            <label for ="patSys">Enter the person's systolic blood pressure:</label>
-            <input type = "text"  class="form-control" id = "patSys" name = "patSys">
-        </div>
-        <div class="form-group">
-            <label for ="patDia">Enter the person's diastolic  blood pressure:</label>
-            <input type = "text"  class="form-control" id = "patDia" name = "patDia" >
-        </div>
-            <p >Does the person have a family history of ...</p>
-            <div class = "form-check"> 
-            <label for="patDiaH">Diabetes </label> <input type="checkbox"  class="form-check-input" name="patDiaH" id="patDiaH" value="patDiaH"><br >
-            <label for="patCancerH">Cancer</label> <input type="checkbox"  class="form-check-input" name="patCancerH" id="patCancerH" value="patCancerH"><br>
-            <label for="patAlzH">Alzheimers</label> <input type="checkbox"  class="form-check-input" name="patAlzH" id="patAlzH" value="patAlzH">
-        </div>
-        <br > 
-        <input type="submit" value="Submit Patient Info">
-
-    </form>
-    </div>
-
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
 </body>
 </html>
