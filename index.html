@@ -13,7 +13,7 @@
         <div class = "container main">
         <h2 class="text-center">Health Insurance Risk Calculator</h2>
         <br>
-        <form class="form" action = "https://health-insurance-risk-server.azurewebsites.net/send" method = "GET"><!-- ttp://localhost:3000/send for local testing, https://health-insurance-risk-server.azurewebsites.net/send for azure server -am -->
+        <form class="form" action = "http://localhost:3000/send" method = "GET"><!-- ttp://localhost:3000/send for local testing, https://health-insurance-risk-server.azurewebsites.net/send for azure server -am -->
             <div class="form-group">
                 <label for ="patAge">Enter the person's age in years:</label>
                 <input type = "text" class="form-control" id = "patAge" name = "patAge" placeholder="Enter age">
@@ -51,7 +51,9 @@
                     </div>
                 </div>
             </div>
-           <input type="submit" value="Submit Patient Info"> 
+            <button class="button mt-2" type="submit" value="Submit Patient Info">Submit Patient Info
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </form>
         </div>
     </section>
