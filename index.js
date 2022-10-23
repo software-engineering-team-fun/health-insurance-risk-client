@@ -54,9 +54,9 @@ function validateInput(input){
 }
 
 async function grabData() {
-    fetch('http://localhost:3000/calculate')
-        .then(res => res.text())
-        .then(text => document.getElementById("display-result").innerHTML = `<h2 class="text-center">${text}</h2>`) //here we will put the verdict 
+    const response = await fetch("https://health-insurance-risk-server.azurewebsites.net/calculate")
+    const data = await response.json()
+    document.getElementById("display-result").innerHTML = `<h2 class="text-center">Your risk is: ${data.risk} Your score is: ${data.risk_num}</h2>`
 }
 
 async function sendData() {
@@ -65,7 +65,7 @@ async function sendData() {
     }
 
     try {
-        await fetch('http://localhost:3000/calculate', {
+        await fetch('https://health-insurance-risk-server.azurewebsites.net/calculate', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
