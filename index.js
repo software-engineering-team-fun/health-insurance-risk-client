@@ -5,7 +5,10 @@ function packageData(){
     var weight = document.getElementById("patWeight").value
     var systolic = document.getElementById("patSys").value
     var diastolic = document.getElementById("patDia").value 
-    JSONData = {"age" : age, "height": height, "weight": weight, "systolic" : systolic, "diastolic": diastolic}
+    var diabetes = document.getElementById("patDiaH").checked
+    var cancer = document.getElementById("patCancerH").checked
+    var alzheimers = document.getElementById("patAlzH").checked
+    JSONData = {"age" : age, "height": height, "weight": weight, "systolic" : systolic, "diastolic": diastolic, "diabetes": diabetes, "cancer": cancer, "alzheimers":alzheimers}
     return JSON.stringify(JSONData)
 }
 
