@@ -1,3 +1,10 @@
+//prompt user with help when the application starts
+function userInstructions(){
+    alert("This is a healthcare risk calculator that will help with determining the risk of a patient. " +
+    "Please fill in all input fields using imperial measurements. ")
+}
+
+
 //package the data into JSON
 function packageData(){
     var JSONData = new Object();
