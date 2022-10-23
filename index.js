@@ -1,3 +1,4 @@
+//package the data into JSON
 function packageData(){
     var JSONData = new Object();
     var age = document.getElementById("patAge").value
@@ -20,6 +21,7 @@ function packageData(){
     return JSON.stringify(JSONData)
 }
 
+//add all input fields and send that to validateInput
 function validate() {
     return [
         document.getElementById("patAge"),
@@ -30,6 +32,7 @@ function validate() {
     ].every(validateInput)
 }
 
+//validate the user input
 function validateInput(input){
     var trimmedValue = input.value.trim()
     if(trimmedValue == ""){
@@ -39,7 +42,7 @@ function validateInput(input){
     }
     if (trimmedValue != ""){
         if (! (/^\d*(?:\.\d{0,2})?$/.test(input.value))){
-            alert("Please enter a valid number without special characters.")
+            alert("Please enter a valid number without special characters or spaces.")
             input.focus();
             return false;
         }
@@ -53,17 +56,17 @@ function validateInput(input){
     return true; 
 }
 
+//grab data from server
 async function grabData() {
     const response = await fetch("https://health-insurance-risk-server.azurewebsites.net/calculate")
     const data = await response.json()
     document.getElementById("display-result").innerHTML = `<h2 class="text-center">Your risk is: ${data.risk} Your score is: ${data.risk_num}</h2>`
 }
 
+//sendata to server. ONLY if it is validating correctly.
 async function sendData() {
     if (validate()){
         var data = packageData()
-    }
-
     try {
         await fetch('https://health-insurance-risk-server.azurewebsites.net/calculate', {
             method: 'post',
@@ -79,4 +82,5 @@ async function sendData() {
         console.log(error)
     }
     grabData()
+    }
 }
